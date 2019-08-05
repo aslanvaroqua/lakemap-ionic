@@ -20,7 +20,7 @@ import { HttpClient } from '@angular/common/http';
   */
  lakeTemperatures(): Observable<any> {
  // return this.http.get('https://gis.lakemonster.com/geoserver/master/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=master%3Alakes&outputFormat=application%2Fjson').pipe(
-    return this.http.get('http://gis.lakemonster.com:8000/temperatures.json').pipe(
+    return this.http.get('http://lakemonster.s3-us-west-2.amazonaws.com/temperatures.json').pipe(
    map(results => results)
   );
 }
