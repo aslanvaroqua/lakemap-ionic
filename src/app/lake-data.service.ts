@@ -19,8 +19,9 @@ import { HttpClient } from '@angular/common/http';
   * @returns Observable with the results in geojson format
   */
  lakeTemperatures(): Observable<any> {
-  return this.http.get('https://gis.lakemonster.com/geoserver/master/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=master%3Alakes&outputFormat=application%2Fjson').pipe(
-    map(results => results)
+ // return this.http.get('https://gis.lakemonster.com/geoserver/master/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=master%3Alakes&outputFormat=application%2Fjson').pipe(
+    return this.http.get('http://gis.lakemonster.com:8000/temperatures.json').pipe(
+   map(results => results)
   );
 }
 
