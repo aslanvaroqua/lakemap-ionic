@@ -74,9 +74,9 @@ this.lakeservice.lakeTemperatures().subscribe(data => {
           feature: feature,
           variables: {}
       };
-      var myIcon = L.divIcon({className: 'my-div-icon'});
-      // // you can set .my-div-icon styles in CSS
-      myIcon['html']=feature['properties']['ECO_LST_F'].toString()+feature['properties']['ECO_LST_F'].toString()+"°F";
+//       var myIcon = L.divIcon({className: 'my-div-icon'});
+//       // // you can set .my-div-icon styles in CSS
+//       myIcon['html']=feature['properties']['ECO_LST_F'].toString()+feature['properties']['ECO_LST_F'].toString()+"°F";
 
   
       // you can set .my-div-icon styles in CSS
