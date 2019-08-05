@@ -94,7 +94,6 @@ this.lakeservice.lakeTemperatures().subscribe(data => {
       return L.circleMarker(latlng, {
         pane: 'pane_lakes_1',
         radius: 5.1,
-        icon: myIcon,
         opacity: 1,
       })
     }
