@@ -1,4 +1,4 @@
-# Integration of OpenStreetMap in Ionic 4
+# Integration of Google Maps + Leaflet + Geoserver in Ionic 4
 
 You may to update your Ionic for latest (Ionic 4)
 `npm i -g ionic@latest`
