@@ -63,7 +63,6 @@ function pop_lakes_1(feature, layer) {
 }
 
 this.map.createPane("pane_lakes_1");
-this.map.createPane("pane_lakes_2");
 
 this.lakeservice.lakeTemperatures().subscribe(data => {
   L.geoJSON(data['features'], {
@@ -75,9 +74,9 @@ this.lakeservice.lakeTemperatures().subscribe(data => {
           feature: feature,
           variables: {}
       };
-      // var myIcon = L.divIcon({className: 'my-div-icon'});
+      var myIcon = L.divIcon({className: 'my-div-icon'});
       // // you can set .my-div-icon styles in CSS
-      // myIcon['html']=feature['properties']['ECO_LST_F'].toString()+feature['properties']['ECO_LST_F'].toString()+"°F";
+      myIcon['html']=feature['properties']['ECO_LST_F'].toString()+feature['properties']['ECO_LST_F'].toString()+"°F";
 
   
       // you can set .my-div-icon styles in CSS
@@ -95,6 +94,7 @@ this.lakeservice.lakeTemperatures().subscribe(data => {
       return L.circleMarker(latlng, {
         pane: 'pane_lakes_1',
         radius: 5.1,
+        icon: myIcon,
         opacity: 1,
       })
     }
