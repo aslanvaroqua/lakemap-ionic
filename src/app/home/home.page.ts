@@ -63,6 +63,7 @@ function pop_lakes_1(feature, layer) {
 }
 
 this.map.createPane("pane_lakes_1");
+this.map.createPane("pane_lakes_2");
 
 this.lakeservice.lakeTemperatures().subscribe(data => {
   L.geoJSON(data['features'], {
@@ -91,11 +92,8 @@ this.lakeservice.lakeTemperatures().subscribe(data => {
 //       var marker =  L.marker(latlng, { opacity: 1 }); //opacity may be set to zero
 //       marker.bindTooltip("LST", {pane: 'pane_lakes_2',permanent: true, className: "F", offset: [0, 0] });
 //       return marker.addTo(this.map);
-      return L.circleMarker(latlng, {
-        pane: 'pane_lakes_1',
-        radius: 5.1,
-        icon: myIcon,
-        opacity: 1,
+      return L.Marker(latlng, {
+        icon:myIcon
       })
     }
   }).addTo(this.map);
