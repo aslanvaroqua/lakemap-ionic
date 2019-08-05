@@ -89,14 +89,14 @@ this.lakeservice.lakeTemperatures().subscribe(data => {
       // }).addTo(this.map);
       // you can set .my-div-icon styles in CSS
     
-      var marker =  L.marker(latlng, { opacity: 0.01 }); //opacity may be set to zero
+      var marker =  L.marker(latlng, { opacity: 1 }); //opacity may be set to zero
       marker.bindTooltip("LST", {pane: 'pane_lakes_2',permanent: true, className: "F", offset: [0, 0] });
-      marker.addTo(this.map);
-      return L.circleMarker(latlng, {
-        pane: 'pane_lakes_1',
-        radius: 5.1,
-        opacity: 1,
-      })
+      return marker.addTo(this.map);
+//       return L.circleMarker(latlng, {
+//         pane: 'pane_lakes_1',
+//         radius: 5.1,
+//         opacity: 1,
+//       })
     }
   }).addTo(this.map);
 });
