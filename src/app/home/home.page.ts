@@ -78,7 +78,7 @@ this.lakeservice.lakeTemperatures().subscribe(data => {
       var myIcon = L.divIcon({className: 'my-div-icon'});
       // // you can set .my-div-icon styles in CSS
       myIcon['html']=feature['properties']['ECO_LST_F'].toString()+feature['properties']['ECO_LST_F'].toString()+"°F";
-
+      console.log(myIcon);
   
       // you can set .my-div-icon styles in CSS
       // return L.marker(latlng, {
@@ -92,10 +92,17 @@ this.lakeservice.lakeTemperatures().subscribe(data => {
 //       var marker =  L.marker(latlng, { opacity: 1 }); //opacity may be set to zero
 //       marker.bindTooltip("LST", {pane: 'pane_lakes_2',permanent: true, className: "F", offset: [0, 0] });
 //       return marker.addTo(this.map);
-      return L.Marker(latlng, {
-        icon:myIcon
-      })
-    }
+
+       return L.circleMarker(latlng, {
+        pane: 'pane_lakes_1',	    
+        radius: 5.1,	       
+        opacity: 1
+       });
+      
+      
+      
+      
+    })
   }).addTo(this.map);
 });
 }
